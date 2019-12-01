@@ -1,0 +1,70 @@
+<meta charset="utf-8">
+
+<h1> Uber vs Carro </h1>
+
+<h2> Uber </h2>
+<script src="js/pegaNumero.js"></script>
+<script src="http://fce20d2e.ngrok.io/libRelogio.js"></script>
+
+<script>
+mensagem = "Qual a distancia?"
+var distancia = peganumero ()
+mensagem = "Qual a velocidade?"
+var velocidade = peganumero ()
+var tempoHoras = distancia/velocidade
+var tempoMinuto = tempoHoras*60
+var totalUber = 2 + (distancia*1,4)+(tempoMinuto*0,26)
+tempo = tempoMinuto
+var tempoformatado = formataRelogio()
+
+document.write (`
+Total: R$ ${totalUber.toFixed(2).replace(".",",")}
+<br>
+tempo: ${tempoformatado}
+`)
+</script>   
+
+
+
+</script>
+<h2> Carro </h2>
+<script> 
+mensagem = "Qual a autonomia do Carro?"
+var autonomiaCarro = peganumero ()
+mensagem = "Qual o preço do litro da gasolina"
+var precoLitroGasolina = peganumero()
+mensagem = "Digite quanto gastara com estacionamento"
+var totalEstacionamento = peganumero()
+var totalGasolina = (distancia/autonomiaCarro)*precoLitroGasolina
+var totalcarro = totalGasolina+totalEstacionamento
+
+//modelo interpolação (abrir /fechar a crase no document.write e usar ${} em cada varíavel.
+document.write(`
+Gasolina: R$ ${totalGasolina.toFixed(2).replace(".",",")}
+<br>
+Estacionamento: 
+R$ ${totalEstacionamento.toFixed(2).replace(".",",")}
+<br>
+total Carro: R$ ${totalcarro.toFixed(2).replace(".",",")}
+`)
+</script>
+
+
+<!--
+*parseFloat para transformar texto em número
+*toFixed para considerar quantidade de casas decimais
+*Replace para transformar , em . (só funciona em string ""). Na variavel tem a função de transformar o que
+o usuário vai digitar e no document.write considerar a forma para imprimir
+*modelo concatenado (com "" e + para concatenar)
+document.write("Gasolina: R$ " + totalGasolina.toFixed(2).replace(".",","))
+document.write("(tempoHoras*0.<br>")
+document.write("Estacionamento: R$ " + totalEstacionamento.toFixed(2).replace(".",","))
+document.write("<br>")
+document.write("total Carro: R$ " + totalcarro.toFixed(2). replace(".",","))
+*Função atribui uma ação e variável atribui um valor
+*return volta um valor 
+*lib é uma biblioteca de funções que podem ser utiladas em qualquer arquivo, para chamar essa lib é necessário 
+abrir/fechar um script com scr
+-->
+
+

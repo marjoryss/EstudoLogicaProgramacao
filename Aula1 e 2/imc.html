@@ -1,0 +1,11 @@
+<meta charset="utf-8">
+<h1>Calculadora de IMC</h1>
+
+<Script>
+var peso = prompt("Qual o seu peso?")
+var altura = prompt("Qual sua altura?") // para elevar usar ** ou Math.pow(altura,2)
+var IMC = peso/Math.pow(altura,2)
+
+document.write ("Seu IMC é: " + IMC.toFixed(2))
+ //toFixed para definir a quantidade de casas decimais que vai aparecer
+</script>
